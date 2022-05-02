@@ -1,1 +1,1 @@
-# crypto-predictor-model
+# Crypto-Predictor-Model
