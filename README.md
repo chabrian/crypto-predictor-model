@@ -13,4 +13,4 @@ Some questions we hope to answer are:
 - Can we apply the same model to other cryptocurrencies?
 - Will other categories of crypto behave similarly?
 
-We created GitHub branches for each part of our project: the presentation/project overview, machine learning model, the database and the dashboard. Each member will be owning a particular piece of it to ensure it is up to date through each segment of the final project, but we will all be contributing to each part. 
+We created GitHub branches for each part of our project: the presentation/project overview, machine learning model, the database and the dashboard. Each member will be owning a particular piece of it to ensure it is up to date through each segment of the final project, but we will all be contributing to each part.  
