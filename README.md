@@ -18,3 +18,5 @@ We created GitHub branches for each part of our project: the presentation/projec
 Google Slides Presentation:
 
 https://docs.google.com/presentation/d/1osnXG7ekbSfd0CvpOe8LRtvBTFQdVWlRWibVyDO1Dwg/edit#slide=id.g129b6a2aaa7_0_107
+
+Link to Tableau Public: https://public.tableau.com/app/profile/teddy.accardi/viz/CryptoPredictionModel
