@@ -33,3 +33,4 @@ After sourcing the historical pricing data for each of the three cryptocurrencie
 ### Prediction Models
 
 ![Prediction Model](Images/Prediction_Model.png)
+
