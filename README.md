@@ -1,5 +1,11 @@
 # Crypto-Predictor-Model
 
+Google Slides Presentation:
+
+https://docs.google.com/presentation/d/1osnXG7ekbSfd0CvpOe8LRtvBTFQdVWlRWibVyDO1Dwg/edit#slide=id.g129b6a2aaa7_0_107
+
+Link to Tableau Public: https://public.tableau.com/app/profile/teddy.accardi/viz/CryptoPredictionModel
+
 ### Selected Topic: Cryptocurrency Predictor Model
 We have selected our topic to be within the cryptocurrency space. We wanted to explore this area and decided to build a supervised learning model to take in historical pricing data and predict what the price of a given cryptocurrency will be at various points in the future. Multiple of our team members are interested in crypto and we decided to take our interests and take on a project that will be both fun and challenging as we look forward into the job hunt and life after the bootcamp. 
 
@@ -15,8 +21,12 @@ Some questions we hope to answer are:
 
 We created GitHub branches for each part of our project: the presentation/project overview, machine learning model, the database and the dashboard. Each member will be owning a particular piece of it to ensure it is up to date through each segment of the final project, but we will all be contributing to each part.  
 
-Google Slides Presentation:
+### Historical Data
 
-https://docs.google.com/presentation/d/1osnXG7ekbSfd0CvpOe8LRtvBTFQdVWlRWibVyDO1Dwg/edit#slide=id.g129b6a2aaa7_0_107
+![Historical Pricing by Crypto](Images/Historical_Pricing_By_Crypto.png)
 
-Link to Tableau Public: https://public.tableau.com/app/profile/teddy.accardi/viz/CryptoPredictionModel
+![Historical Pricing with Volume](Images/Historical_Dual_Chart_with_Volume.png)
+
+### Prediction Models
+
+![Prediction Model](Images/Prediction_Model.png)
