@@ -33,17 +33,17 @@ CREATE DATABASE "Crypto_Data"
     CONNECTION LIMIT = -1;
 -----
 
-Schema |         Name          | Type  |  Owner
+-- Schema |         Name          | Type  |  Owner
 --------+-----------------------+-------+----------
- public | crypto_orig           | table | postgres
- public | clean_df_30_day       | table | postgres
- public | clean_df_60_day       | table | postgres
- public | predict_df_30_day     | table | postgres
- public | predict_df_60_day     | table | postgres
+ -- public | crypto_orig           | table | postgres
+ -- public | clean_df_30_day       | table | postgres
+--  public | clean_df_60_day       | table | postgres
+--  public | predict_df_30_day     | table | postgres
+--  public | predict_df_60_day     | table | postgres
 
 
 
-host_name = 'database-1.cvhixt1fojqo.us-east-1.rds.amazonaws.com'
+-- host_name = 'database-1.cvhixt1fojqo.us-east-1.rds.amazonaws.com'
 
 
 --- Tables 
