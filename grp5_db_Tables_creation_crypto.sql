@@ -1,22 +1,6 @@
 
 
 
-create table crypto_predict_30_day (
-type_crypto varchar,
-date_orig DATE,
-Close_ DOUBLE PRECISION,
-date_pred_30 DATE,
-Close_pred_30 DOUBLE PRECISION 
-
-);
-
-create table crypto_predict_60_day (
-type_crypto varchar,
-date_orig DATE,
-Close_ DOUBLE PRECISION,
-date_pred_60 DATE,
-Close_pred_60 DOUBLE PRECISION
-
 -- The create databse script is as:
 
 -- Database: Crypto_Data
@@ -97,7 +81,7 @@ Close_pred DOUBLE PRECISION
 );
 
 
-clean_df_30_day 
+-- predict_df_30_day
 
 -- predict_df_30_day 
 create table predict_df_30_day (
