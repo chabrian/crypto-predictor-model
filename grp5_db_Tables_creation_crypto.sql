@@ -6,7 +6,7 @@ type_crypto varchar,
 date_orig DATE,
 Close_ DOUBLE PRECISION,
 date_pred_30 DATE,
-Close_pred_30 DOUBLE PRECISION
+Close_pred_30 DOUBLE PRECISION 
 
 );
 
