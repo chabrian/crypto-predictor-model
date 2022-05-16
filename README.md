@@ -30,7 +30,7 @@ After sourcing the historical pricing data for each of the three cryptocurrencie
 
 ![Historical Pricing with Volume](Images/Historical_Dual_Chart_with_Volume.png)
 
-### Prediction Models
+### Prediction Models 
 
 ![Prediction Model](Images/Prediction_Model.png)
 
