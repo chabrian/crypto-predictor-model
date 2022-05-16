@@ -40,7 +40,7 @@ select count (*) from ada_orig;
 
 -- run this after the import of data from the CSV
 
-select * from ada_orig;
+select * from ada_orig; 
 
 SELECT    DISTINCT daystarttoend
 FROM    ada_orig order by daystarttoend ;
