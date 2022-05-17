@@ -28,10 +28,32 @@ After sourcing the historical pricing data for each of the three cryptocurrencie
 
 ![Historical Pricing by Crypto](Images/Historical_Pricing_By_Crypto.png)
 
+Note:
+
 ![Historical Pricing with Volume](Images/Historical_Dual_Chart_with_Volume.png)
+
+Note:
 
 ### Prediction Models 
 
 ![Prediction Model](Images/Prediction_Model.png)
 
-### Results
+Note:
+
+### Summary
+
+Data Teams analysis and inference:
+Linear regression outputs were different from the ARIMA model. From a structure standpoint the ARIMA model used two features (original date and the close price). Whereas the linear regression mode used open, high, close, volume and marketcap.
+We recommend using the linear regression because the number of inputs 
+
+Extending the model:
+Provide an input scheme to include cryptos as required via a file uplaod. Currently it is restricted to 3 cryptos
+Include latest novel techniques and features such as market sentiment and other statitical attributes used by the stok market analysts.
+Lastly, we encourage developer input to further hone this model. Perhaps bring in additional features such as market sentiment, or even factors like calamities and wars the impact they have on the crypto market and individual prices.
+
+NB:Every model has its pros and cons and any users of this model should understand its risks and youroguhly investigate the logic prios=r to investing.
+
+
+
+
+
