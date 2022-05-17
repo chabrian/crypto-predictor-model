@@ -28,11 +28,11 @@ After sourcing the historical pricing data for each of the three cryptocurrencie
 
 ![Historical Pricing by Crypto](Images/Historical_Pricing_By_Crypto.png)
 
-Note:
+Note: From the figures above, we see that these three cryptos have herd mentality and closely follow each other in spikes and troughs. Interstingly, cryptos picked up during the pandemic years and if one looks beyond the covers it was when disposable income in the form of stimulus checks were handed out.
 
 ![Historical Pricing with Volume](Images/Historical_Dual_Chart_with_Volume.png)
 
-Note:
+Note: Volume increase is accompanied almost instantaneously by a price spike, higher or lower. Volume is an important input feature because of its immediate handshake with price.
 
 ### Prediction Models 
 
