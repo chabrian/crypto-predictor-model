@@ -28,17 +28,21 @@ After sourcing the historical pricing data for each of the three cryptocurrencie
 
 ![Candlestick](Images/Candlestick_Chart.png)
 
-Note: From the figures above, we see that these three cryptos have herd mentality and closely follow each other in spikes and troughs. Interstingly, cryptos picked up during the pandemic years and if one looks beyond the covers it was when disposable income in the form of stimulus checks were handed out.
+Note: The variety in sizing of the daily candlesticks illustrated in this chart show how the prices of cryptocurrencies not only day to day, but throughout the course of the day as well. The length of each candlestick, and their accompanying grey tracking line behind, correspond to the spreads between open and close, as well as high and low. These are the extra features that we feed into the linear regression models, but not the ARIMA models, which only take the closing price, and give us increased confidence in the linear regression model as a result.
 
 ![Historical Pricing with Volume_2](Images/Historical_Dual_Chart_with_Volume.png)
 
-Note: Volume increase is accompanied almost instantaneously by a price spike, higher or lower. Volume is an important input feature because of its immediate handshake with price.
+Note: From the figures above, we see that these three cryptos have a herd mentality and closely follow each other in spikes and troughs. Interstingly, cryptos picked up during the pandemic years and if one looks beyond the covers it was when disposable income in the form of stimulus checks were handed out at a time when individuals were stuck at home and not having the same avenues to spend that disposable income elsewhere like they had in the past. Volume increase is accompanied almost instantaneously by a price spike, higher or lower. Volume is an important input feature because of its immediate handshake with price.
 
 ### Prediction Models 
 
 ![Prediction Model_2](Images/Prediction_Model.png)
 
+We see a slight shift in the chart from the actual price to the 30 and 60 day linear regression models. This is due to the data being trained to forecast 30 and 60 days into the future and since we use previous data to predict future data, historical pricing isn't introduced into the model for 30 or 60 days, respectively, causing similar chart movement on a slight delay.
+
 ![ARIMA vs Linear Regression](Images/ARIMA_vs_Linear_Regression.png)
+
+Since the ARIMA method is forecasting out to a certain point, it takes a linear path to get to the desired 30 and 60 day price. Interestingly, despite the very different paths the linear regression and ARIMA models take to the 30 and 60 predicted prices, they both predict similar prices 30 and 60 days into the future (ending points of the above chart).
 
 Note:
 
@@ -53,7 +57,7 @@ Provide an input scheme to include cryptos as required via a file uplaod. Curren
 Include latest novel techniques and features such as market sentiment and other statitical attributes used by the stok market analysts.
 Lastly, we encourage developer input to further hone this model. Perhaps bring in additional features such as market sentiment, or even factors like calamities and wars the impact they have on the crypto market and individual prices.
 
-NB: Every model has its pros and cons and any users of this model should understand its risks and youroguhly investigate the logic prios=r to investing.
+NB: Every model has its pros and cons and any users of this model should understand its risks and thoroughly investigate the logic prior to investing.
 
 
 
