@@ -24,13 +24,13 @@ We created GitHub branches for each part of our project: the presentation/projec
 ### Analysis Phase
 After sourcing the historical pricing data for each of the three cryptocurrencies, we decided to use a linear regression supervised learning model to train our historical data on our features and predict what the daily closing price of each cryptocurrency will be for the next 30 and 60 days. We then connected this data to store in a Postgres database via AWS RDS and extracted it from Postgres to visualize in Tableau.
 
-### Historical Data
+### Historical Data 
 
 ![Historical Pricing by Crypto](Images/Historical_Pricing_By_Crypto.png)
 
-![Historical Pricing with Volume](Images/Historical_Dual_Chart_with_Volume.png)
+![Historical Pricing with Volume](Images/Historical_Dual_Chart_with_Volume.png) 
 
-### Prediction Models
+### Prediction Models 
 
-![Prediction Model](Images/Prediction_Model.png)
+![Prediction Model](Images/Prediction_Model.png) 
 
