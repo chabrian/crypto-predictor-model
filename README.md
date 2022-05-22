@@ -14,10 +14,10 @@ We procured our daily historical pricing from a crypto tracking site (coincodex.
 
 ### Open Questions
 Some questions we hope to answer are:
-- What will our model predict that the price of Cardano will be at various points in the future?
-- Is supervised learning the best option to tell us this?
-- Can we apply the same model to other cryptocurrencies?
-- Will other categories of crypto behave similarly? 
+- What will our model predict that the price of Cardano, Ethereum and Ripple will be at various points in the future? Is supervised learning the best option to tell us this?
+- Can we apply the same model to other cryptocurrencies? We have provided a subset of Ethereum, Cardano and Ripple
+- Will different cryptos with their different price volumes and differing real world utility behave similarly?
+
 
 We created GitHub branches for each part of our project: the presentation/project overview, machine learning model, the database and the dashboard. Each member will be owning a particular piece of it to ensure it is up to date through each segment of the final project, but we will all be contributing to each part.  
 
@@ -59,7 +59,24 @@ Lastly, we encourage developer input to further hone this model. Perhaps bring i
 
 NB: Every model has its pros and cons and any users of this model should understand its risks and thoroughly investigate the logic prior to investing.
 
+Answering our initial questions:
 
+- What will our model predict that the price of Cardano, Ethereum and Ripple will be at various points in the future? Is supervised learning the best option to tell us this?
 
+Findings: 
 
+**30 Day Linear Regression:** ADA: $0.82  ETH: $2,815.23  XRP: $0.64
 
+**30 Day ARIMA:** ADA: $0.84  ETH: $2,969.46  XRP: $0.64
+
+**60 Day Linear Regression:** ADA: $0.81  ETH: $2,838.94  XRP: $0.64
+
+**60 Day ARIMA:** ADA: $0.85  ETH: $3,016.93  XRP: $0.65
+
+- Can we apply the same model to other cryptocurrencies? We have provided a subset of Ethereum, Cardano and Ripple
+
+Findings: Yes. Because the features of our model are metrics that are universally available for any cryptocurrency, it is easily replicable for any crypto, as we showed by performing the analysis on three separate ones.
+
+- Will different cryptos with their different price volumes and differing real world utility behave similarly?
+
+Findings: Yes. Ethereum and Cardano have far different volumes and market caps, but both behave similarly when plotted on a chart, pointing to a "herd mentality" across the crypto space, or at least amongst those we modeled. 
