@@ -5,7 +5,7 @@ The file was obtained from the coindecko site. It contained daily data in a csv 
 ### Cleanup and pre processing cleanup
 
 1. The date filed was in a mixed format and not suitable for analysis. This was converted to a date field. Then the dates were ordered.
-2. Another column type_crypto.
+2. Another column type_crypto 
 3. Lastly the data definition language for schema and table creation was performed using a postgres SQL database.
 4. We have used Big data storage with postgres DB instance created on AWS and connected the local copy to transact and store within postgres on the AWS database instance.
 5. Data from the csv was then imported into the table created. 
@@ -40,7 +40,7 @@ select count (*) from ada_orig;
 
 -- run this after the import of data from the CSV
 
-select * from ada_orig; 
+select * from ada_orig;
 
 SELECT    DISTINCT daystarttoend
 FROM    ada_orig order by daystarttoend ;
