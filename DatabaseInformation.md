@@ -4,64 +4,109 @@ The file was obtained from the coindecko site. It contained daily data in a csv 
 
 ### Cleanup and pre processing cleanup
 
-1. The date filed was in a mixed format and not suitable for analysis. This was converted to a date field. Then the dates were ordered.
-2. Another column type_crypto 
-3. Lastly the data definition language for schema and table creation was performed using a postgres SQL database.
-4. We have used Big data storage with postgres DB instance created on AWS and connected the local copy to transact and store within postgres on the AWS database instance.
-5. Data from the csv was then imported into the table created. 
+## Input files for fetaures and historic data are obtained from:
+https://coincodex.com/crypto/ethereum/historical-data/ (using Ethereum Crypto as an example). Obtain the data for XRP and ADA similarly
+
+## Basic PRocessing
+Your csv file must resemble the following structure prior to being utilized by the programs
+type_crypto |	date_orig| daystarttoend	open_|	high_|	low_|	close_|	volume_|	marketcap_| (the pipe symbol used here is meant to separate the columns for a readme perspective. It should not be used in the Excel CSV file.
 
 
 
-**SQLs used to create the table:**
-
-create TABLE ada_orig (
+### DB composition
+Schema |         Name         		| Type  |  Owner
+--------+-------------------------------+-------+----------
+ public | crypto_orig          		| table | postgres
+ public | clean_df_30_day		| table | postgres
+ public | clean_df_60_day      		| table | postgres
+ public | predict_df_30_day   		| table | postgres
+ public | predict_df_60_day    		| table | postgres
+ public | predict_df_30_day_arima  	| table | postgres
+ public | predict_df_60_day_arima	| table | postgres
+ 
+ ## DB Conenction String
+ host_name = 'database-1.cvhixt1fojqo.us-east-1.rds.amazonaws.com'
+ 
+ ## DB Tables SQL
+ create table crypto_orig (
 type_crypto varchar,
 date_orig DATE,
-Daystarttoend INT,
-Open_ada DOUBLE PRECISION,
-High_ada DOUBLE PRECISION,
-Low_ada DOUBLE PRECISION,
-Close_ada DOUBLE PRECISION,
-Volume_ada DOUBLE PRECISION,
-MarketCap_ada DOUBLE PRECISION
+daystarttoend INT,
+open_ DOUBLE PRECISION,
+high_ DOUBLE PRECISION,
+low_ DOUBLE PRECISION,
+close_ DOUBLE PRECISION,
+volume_ DOUBLE PRECISION,
+marketCap_ DOUBLE PRECISION
+
+);
+-- clean_df_30_day
+
+create table clean_df_30_day (
+type_crypto text,
+date_orig DATE,
+daysstarttoend bigint,
+open_ double precision,
+high_ double precision,
+low_double precision,
+close_ double precision,
+volume_ double precision,
+marketcap_ double precision,
+date_pred DATE,
+Close_pred DOUBLE PRECISION
+
+);
+
+-- clean_df_60_day
+create table clean_df_60_day (
+type_crypto text,
+date_orig DATE,
+daysstarttoend bigint,
+open_ double precision,
+high_ double precision,
+low_double precision,
+close_ double precision,
+volume_ double precision,
+marketcap_ double precision,
+date_pred DATE,
+Close_pred DOUBLE PRECISION
+
 );
 
 
 
-**SQLs used to validate the Data imported and accuracy of the table**
-
---run this after the import of data from the CSV
-
-select count (*) from ada_orig;
-
-*1669*
-
--- 
-
--- run this after the import of data from the CSV
-
-select * from ada_orig;
-
-SELECT    DISTINCT daystarttoend
-FROM    ada_orig order by daystarttoend ;
-
--- Validate that the columns were created accurately via the DDL.
-SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME = 'ada_orig';
-
-
-
--- The final tabel to hold the results is tentatively
-create TABLE ada_final (
+-- predict_df_30_day 
+create table predict_df_30_day (
 type_crypto varchar,
-date_orig DATE,
-Daystarttoend INT,
-Open_ada DOUBLE PRECISION,
-High_ada DOUBLE PRECISION,
-Low_ada DOUBLE PRECISION,
-Close_ada DOUBLE PRECISION,
-Volume_ada DOUBLE PRECISION,
-MarketCap_ada DOUBLE PRECISION,
-close_price_pred DOUBLE PRECISION,
-close_date_pred DATE
+date date,
+close_orig double precision,
+close_pred double precision
+
+);
+
+-- predict_df_60_day 
+create table predict_df_60_day (
+type_crypto varchar,
+date date,
+close_orig double precision,
+close_pred double precision
+
+);
+
+-- predict_df_30_day_arima 
+create table predict_df_30_day (
+type_crypto varchar,
+date date,
+close_orig double precision,
+close_pred double precision
+
+);
+
+-- predict_df_60_day_arima
+create table predict_df_60_day (
+type_crypto varchar,
+date date,
+close_orig double precision,
+close_pred double precision
 
 );
