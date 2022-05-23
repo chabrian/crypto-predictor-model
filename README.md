@@ -28,11 +28,13 @@ After sourcing the historical pricing data for each of the three cryptocurrencie
 
 We used the ARIMA (auto regressive integrated moving average) model from the  statsmodel python library and the linear regression model from the sklean library. Both models use machine learning algorithms to train and predict the future price of the selected cryptocurrency. 
 
-The linear regression model uses six features to train the model with the target variable being the close price 30 or 60 days forward from the feature data. The ARIMA model uses the date and daily close price as the feature data with second order predictors, differncing and white noise programmed as parameters. 
+The linear regression model uses six features to train the model with the target variable being the close price 30 or 60 days forward from the feature data. The six features include open, high, low, close, volume, and market cap. Each plays a role in predicting the future price in that together they describe the spread, activity, volitility, and cost. The ARIMA model uses the date and daily close price as the feature data with second order predictors, differncing and white noise as programmed parameters. These parameters introduce real-world error and uncertainty. 
 
-The model outputs a data frame that is sent to Postgres as a packaged product with the date, actual close price, and predicted close price. 
+While the ARIMA model has the potential to be enhanced, the linear regression model is our choice of model since it comprehensively includes more price indicators and performs better without overfitting the data. 
 
-The model accuracy is represented using the root mean squared for the arima model and using the r squared value for the linear regression model. 
+The model was testing using known historical data and comparing it to the trained model predictions. Then the model predictions were used to forecast future close price.
+
+The model accuracy is calculated using the root mean squared error (RMSE) and the mean absolute percentage error (MAPE). The mean absolute percentage error for the linear regression model was calculated at 0.515, implying that the model is 48.5% accurate in predicting the next 30 days.  
 
 Both models have advantages, but the linear regression model provides a more robust platform to build on. The model outputs interval data opposed to the linear forecast from the ARIMA model. Additionally, the linear regression model trains on multiple features including volume and spread that help refine the future forecasting. Lastly, both models are designs using functions and generalized inputs. We encourage other developers to build on this model.
 
