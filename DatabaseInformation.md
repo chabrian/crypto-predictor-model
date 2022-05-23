@@ -1,3 +1,10 @@
+## Overall information of the project
+The DB omponent described here is the data component of the project. For a compelte understanding of the project and its utility, please visit these two links:
+
+Google slide presentation of the project: https://docs.google.com/presentation/d/1osnXG7ekbSfd0CvpOe8LRtvBTFQdVWlRWibVyDO1Dwg/edit#slide=id.g129b6a2aaa7_0_107
+
+Link to Tableau Public: https://public.tableau.com/app/profile/teddy.accardi/viz/CryptoPredictionModel
+
 ## Database Information
 
 The file was obtained from the coindecko site. It contained daily data in a csv format of the ADA crypto coin price. The starting date of the data in the file was  10/02/2017 and the last data point extracted was 04/26/2022. 
