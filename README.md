@@ -22,7 +22,19 @@ Some questions we hope to answer are:
 We created GitHub branches for each part of our project: the presentation/project overview, machine learning model, the database and the dashboard. Each member will be owning a particular piece of it to ensure it is up to date through each segment of the final project, but we will all be contributing to each part.  
 
 ### Analysis Phase
-After sourcing the historical pricing data for each of the three cryptocurrencies, we decided to use a linear regression supervised learning model to train our historical data on our features and predict what the daily closing price of each cryptocurrency will be for the next 30 and 60 days. We then connected this data to store in a Postgres database via AWS RDS and extracted it from Postgres to visualize in Tableau. Within these visualizations we allow the user to filter between our 30 and 60 day predictive models, as well as choose which cryptocurrency they would like displayed amongst the three for both the predictions, as well as the historical models, adding an interactive element to our charts.
+After sourcing the historical pricing data for each of the three cryptocurrencies, we decided to use a linear regression supervised learning model to train our historical data on our features and predict what the daily closing price of each cryptocurrency will be for the next 30 and 60 days. We then connected this data to store in a Postgres database via AWS RDS and extracted it from Postgres to visualize in Tableau. Within these visualizations we allow the user to filter between our 30 and 60 day predictive models, as well as choose which cryptocurrency they would like displayed amongst the three for both the predictions, as well as the historical models, adding an interactive element to our charts. See more details on the machine learning model in the next section.
+
+#### Machine Learning Model
+
+We used the ARIMA (auto regressive integrated moving average) model from the  statsmodel python library and the linear regression model from the sklean library. Both models use machine learning algorithms to train and predict the future price of the selected cryptocurrency. 
+
+The linear regression model uses six features to train the model with the target variable being the close price 30 or 60 days forward from the feature data. The ARIMA model uses the date and daily close price as the feature data with second order predictors, differncing and white noise programmed as parameters. 
+
+The model outputs a data frame that is sent to Postgres as a packaged product with the date, actual close price, and predicted close price. 
+
+The model accuracy is represented using the root mean squared for the arima model and using the r squared value for the linear regression model. 
+
+Both models have advantages, but the linear regression model provides a more robust platform to build on. The model outputs interval data opposed to the linear forecast from the ARIMA model. Additionally, the linear regression model trains on multiple features including volume and spread that help refine the future forecasting. Lastly, both models are designs using functions and generalized inputs. We encourage other developers to build on this model.
 
 ### Historical Data
 
