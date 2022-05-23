@@ -1,6 +1,6 @@
 # Crypto-Predictor-Model
 
-Google Slides Presentation:
+Google Slides Presentation: 
 
 https://docs.google.com/presentation/d/1osnXG7ekbSfd0CvpOe8LRtvBTFQdVWlRWibVyDO1Dwg/edit#slide=id.g129b6a2aaa7_0_107
 
@@ -77,6 +77,6 @@ Findings:
 
 Findings: Yes. Because the features of our model are metrics that are universally available for any cryptocurrency, it is easily replicable for any crypto, as we showed by performing the analysis on three separate ones.
 
-- Will different cryptos with their different price volumes and differing real world utility behave similarly?
+- Will different cryptos with their different price volumes and differing real world utility behave similarly? 
 
 Findings: Yes. Ethereum and Cardano have far different volumes and market caps, but both behave similarly when plotted on a chart, pointing to a "herd mentality" across the crypto space, or at least amongst those we modeled. 
