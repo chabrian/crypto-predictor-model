@@ -12,7 +12,7 @@ THe historical data kicks off the entire process. It contains historical data of
 ## Input files for fetaures and historic data are obtained from:
 https://coincodex.com/crypto/ethereum/historical-data/ (using Ethereum Crypto as an example). Obtain the data for XRP and ADA similarly
 
-## Basic PRocessing
+## Basic Processing
 Your csv file must resemble the following structure prior to being utilized by the programs
 type_crypto |	date_orig| daystarttoend	open_|	high_|	low_|	close_|	volume_|	marketcap_| (the pipe symbol used here is meant to separate the columns for a readme perspective. It should not be used in the Excel CSV file.
 
