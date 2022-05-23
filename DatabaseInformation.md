@@ -7,7 +7,7 @@ Link to Tableau Public: https://public.tableau.com/app/profile/teddy.accardi/viz
 
 ## Database Information
 
-The file was obtained from the coindecko site. It contained daily data in a csv format of the ADA crypto coin price. The starting date of the data in the file was  10/02/2017 and the last data point extracted was 04/26/2022. 
+THe historical data kicks off the entire process. It contains historical data of the three cryptos, Ethereum, ADA and XRP. The file was obtained from the coindecko site. It contained daily data in a csv format of the ADA crypto coin price. The starting date of the data in the file was  10/02/2017 and the last data point extracted was 04/26/2022. From this file, the required models, trian, test and predict are preared. Theintermediate models and the final predict models are stored peristently in the database. The data can be accessed via apis or other inerface integration methods, but are not described here as they are not in the scope of this exercise.
 
 ### Cleanup and pre processing cleanup
 
