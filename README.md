@@ -27,10 +27,12 @@ After sourcing the historical pricing data for each of the three cryptocurrencie
 - We selected our three cryptos to model for 30 and 60 day predicted closing prices (ETH, XRP, ADA)
 - Historical data for the above three cryptos were obtained from www.coincodex.com 
 - We decided to manage the data through a PostgreSQL database, hosted on Amazon's AWS RDS, which provided data storage capabilities and protected data storage abilities
+- We selected the linear regression model from the sklearn to train, test and predict closing prices based on a feature list of high, low, open, close, volume and market cap. Noticeable in this feature list is the absence of time.
+- Additionally, we wanted to include a model that included time as an input feature so we created a secondary model: ARIMA.
 
 #### Machine Learning Model
 
-We used the ARIMA (auto regressive integrated moving average) model from the  statsmodel python library and the linear regression model from the sklean library. Both models use machine learning algorithms to train and predict the future price of the selected cryptocurrency. 
+We used the ARIMA (auto regressive integrated moving average) model from the statsmodel python library and the linear regression model from the sklearn library. Both models use machine learning algorithms to train and predict the future price of the selected cryptocurrency. 
 
 The linear regression model uses six features to train the model with the target variable being the close price 30 or 60 days forward from the feature data. The six features include open, high, low, close, volume, and market cap. Each plays a role in predicting the future price in that together they describe the spread, activity, volitility, and cost. The ARIMA model uses the date and daily close price as the feature data with second order predictors, differncing and white noise as programmed parameters. These parameters introduce real-world error and uncertainty. 
 
