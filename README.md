@@ -32,9 +32,11 @@ After sourcing the historical pricing data for each of the three cryptocurrencie
 
 #### Machine Learning Model
 
+The linear regression model uses six features to train the model with the target variable being the close price 30 or 60 days forward from the feature data. The six features include open, high, low, close, volume, and market cap. Each plays a role in predicting the future price in that together they describe the spread, activity, volitility, and cost. 
+
 We used the ARIMA (auto regressive integrated moving average) model from the statsmodel python library and the linear regression model from the sklearn library. Both models use machine learning algorithms to train and predict the future price of the selected cryptocurrency. 
 
-The linear regression model uses six features to train the model with the target variable being the close price 30 or 60 days forward from the feature data. The six features include open, high, low, close, volume, and market cap. Each plays a role in predicting the future price in that together they describe the spread, activity, volitility, and cost. The ARIMA model uses the date and daily close price as the feature data with second order predictors, differncing and white noise as programmed parameters. These parameters introduce real-world error and uncertainty. 
+The ARIMA model uses the date and daily close price as the feature data with second order predictors, differncing and white noise as programmed parameters. These parameters introduce real-world error and uncertainty. 
 
 While the ARIMA model has the potential to be enhanced, the linear regression model is our choice of model since it comprehensively includes more price indicators and performs better without overfitting the data. 
 
