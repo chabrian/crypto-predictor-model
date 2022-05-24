@@ -18,11 +18,15 @@ Some questions we hope to answer are:
 - Can we apply the same model to other cryptocurrencies? We have provided a subset of Ethereum, Cardano and Ripple
 - Will different cryptos with their different price volumes and differing real world utility behave similarly?
 
-
 We created GitHub branches for each part of our project: the presentation/project overview, machine learning model, the database and the dashboard. Each member will be owning a particular piece of it to ensure it is up to date through each segment of the final project, but we will all be contributing to each part.  
 
 ### Analysis Phase
 After sourcing the historical pricing data for each of the three cryptocurrencies, we decided to use a linear regression supervised learning model to train our historical data on our features and predict what the daily closing price of each cryptocurrency will be for the next 30 and 60 days. We then connected this data to store in a Postgres database via AWS RDS and extracted it from Postgres to visualize in Tableau. Within these visualizations we allow the user to filter between our 30 and 60 day predictive models, as well as choose which cryptocurrency they would like displayed amongst the three for both the predictions, as well as the historical models, adding an interactive element to our charts. See more details on the machine learning model in the next section.
+
+**Requirements:**
+- We selected our three cryptos to model for 30 and 60 day predicted closing prices (ETH, XRP, ADA)
+- Historical data for the above three cryptos were obtained from www.coincodex.com 
+- We decided to manage the data through a PostgreSQL database, hosted on Amazon's AWS RDS, which provided data storage capabilities and protected data storage abilities
 
 #### Machine Learning Model
 
