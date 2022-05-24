@@ -71,7 +71,7 @@ Note: We see a slight shift in the chart from the actual price to the 30 and 60 
 
 ![ARIMA vs Linear Regression](Images/ARIMA_vs_Linear_Regression.png)
 
-Note: Since the ARIMA method is forecasting out to a certain point, it takes a linear path to get to the desired 30 and 60 day price. Interestingly, despite the very different paths the linear regression and ARIMA models take to the 30 and 60 predicted prices, they both predict similar prices 30 and 60 days into the future (ending points of the above chart).
+Note: Since the ARIMA method is forecasting out to a certain point, it takes a linear path to get to the desired 30 and 60 day price. Interestingly, despite the very different paths the linear regression and ARIMA models take to the 30 and 60 predicted prices, they both predict similar prices 30 and 60 days into the future (ending points of the above chart). 
 
 ### Summary
 
@@ -104,7 +104,7 @@ Findings:
 
 - Can we apply the same model to other cryptocurrencies? We have provided a subset of Ethereum, Cardano and Ripple
 
-Findings: Yes. Because the features of our model are metrics that are universally available for any cryptocurrency, it is easily replicable for any crypto, as we showed by performing the analysis on three separate ones.
+Findings: Yes. Because the features of our model are metrics that are universally available for any cryptocurrency, it is easily replicable for any crypto, as we showed by performing the analysis on three separate ones.`
 
 - Will different cryptos with their different price volumes and differing real world utility behave similarly? 
 
