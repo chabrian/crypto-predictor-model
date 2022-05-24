@@ -48,6 +48,7 @@ For the training sets of features:
 
 X was selected as X = df_final.drop('close__pred', axis=1)
 
+
 y was selected as:  y = df_final['close__pred']
 
 ## Explanation of model choice, including limitations and benefits
