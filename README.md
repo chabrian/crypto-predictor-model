@@ -36,13 +36,19 @@ After sourcing the historical pricing data for each of the three cryptocurrencie
 
 The linear regression model uses six input features to train the model with the target variable being the close price 30 or 60 days forward from the feature data. The six features include open, high, low, close, volume, and market cap data over a period of approximately four years. Each features plays a role in predicting the future price in that together they describe the spread, activity, and volatility each day. 
 
-The model was tested using recent historical data and comparing it to the trained model predicted output. The model accuracy is calculated using the root mean squared error (RMSE) and the mean absolute percentage error (MAPE). The mean absolute percentage error for the linear regression model was calculated at 0.515, implying that the model is 48.5% accurate in predicting the next 30 days. Once we achieved a comfortable level of accuracy, we used the trained model to forecast the 30-day and 60-day closing price.
+- Training, Testing, and Accuracy for the LRM
+
+The model was tested using recent historical data and comparing it to the trained model predicted output. We split the data into training and testing datasets by separating the most up-to-date information. The model accuracy is calculated using the root mean squared error (RMSE) and the mean absolute percentage error (MAPE). The mean absolute percentage error for the linear regression model was calculated at 0.515, implying that the model is 48.5% accurate in predicting the next 30 days. Once we achieved a comfortable level of accuracy, we used the trained model to forecast the 30-day and 60-day closing price.
 
 - Autoregressive Integrated Moving Average Model (ARIMA)
 
-We used the ARIMA (auto regressive integrated moving average) model from the statsmodel python library and the linear regression model from the sklearn library. Both models use machine learning algorithms to train and predict the future price of the selected cryptocurrency. 
+We used the ARIMA model from the statsmodel Python library using the date and closing price as the two training features. By nature of the ARIMA model, it only trains on historical (autoregressive) information and therefore, there is no target data. The ARIMA model has three input parameters in addition to the dataset: predictors, differencing, and error. Predictors are used to describe the MA (moving average) term. Differencing is used to make the data stationary by taking the difference between subsquent data points. The error parameter helps to quanitify the 'white noise' hidden in the data influenced by external market factors like market sentiment. The optimal ARIMA model was discovered to use first order differencing, second order predictors and second order error (2,2,1).
 
-The ARIMA model uses the date and daily close price as the feature data with second order predictors, differncing and white noise as programmed parameters. These parameters introduce real-world error and uncertainty. 
+- Training, Testing, and Accuracy for the ARIMA model
+
+The model was trained using all of the historical clsoing price data available over the past four years.
+
+These parameters introduce real-world error and uncertainty. 
 
 - Model Comparison
 
