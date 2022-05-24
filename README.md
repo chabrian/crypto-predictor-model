@@ -46,15 +46,13 @@ We used the ARIMA model from the statsmodel Python library using the date and cl
 
 - Training, Testing, and Accuracy for the ARIMA model
 
-The model was trained using all of the historical clsoing price data available over the past four years.
-
-These parameters introduce real-world error and uncertainty. 
+The model was trained using the historical clsoing price data available over the past four years. We validated the model by comparing it to the most recent closing price data as shown in the Tablaeu visualizations. The accuracy of the model was calculated using the actual closing price data and forecasted predicted closing price using the root mean squared error (RMSE) and the mean absolute percentage error (MAPE).  The mean absolute percentage error for the linear regression model was calculated at ___, implying that the model is ___ accurate in predicting the next 30 days. The three tuning parameters were adjusted accordingly to achieve the greatest accuracy.
 
 - Model Comparison
 
-While the ARIMA model has the potential to be enhanced, the linear regression model is our choice of model since it comprehensively includes more price indicators and performs better without overfitting the data. 
+The linear regression model including more input features that help to describe the anticipated closing price without overfitting the data. The linear model also outputs daily interval results opposed to the ARIMA model which only has the ability to forecast linearly. Despite these positive features, the linear regression model fails to consider the time component that is critical for timeseries forecasting. This is where the ARIMA model has an advantage, particularly in its ability to consider the 'white noise' error and velocity of the changing parameters.
 
-Both models have advantages, but the linear regression model provides a more robust platform to build on. The model outputs interval data opposed to the linear forecast from the ARIMA model. Additionally, the linear regression model trains on multiple features including volume and spread that help refine the future forecasting. Lastly, both models are designs using functions and generalized inputs. We encourage other developers to build on this model.
+The ideal model would be a combination of the linear regression model and ARIMA model that uses multiple features as well as the ARIMA tuning parameters. Both models are designed using functions and generalized inputs making it easy to build on. We encourage other developers to use our models as a foundation for a more complex and comprehensive cryptocurrency price predictor model.
 
 ### Historical Data
 
