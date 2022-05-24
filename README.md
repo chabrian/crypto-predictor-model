@@ -1,10 +1,9 @@
 # Crypto-Predictor-Model
 
-Google Slides Presentation: 
 
-https://docs.google.com/presentation/d/1osnXG7ekbSfd0CvpOe8LRtvBTFQdVWlRWibVyDO1Dwg/edit#slide=id.g129b6a2aaa7_0_107
+[Link To Google Slides](https://docs.google.com/presentation/d/1osnXG7ekbSfd0CvpOe8LRtvBTFQdVWlRWibVyDO1Dwg/edit#slide=id.g129b6a2aaa7_0_107)
 
-Link to Tableau Public: [https://public.tableau.com/app/profile/teddy.accardi/viz/CryptoPredictionModel](https://public.tableau.com/app/profile/teddy.accardi/viz/CryptoPredictionModel/Story?publish=yes)
+[Link to Tableau Public](https://public.tableau.com/app/profile/teddy.accardi/viz/CryptoPredictionModel/Story?publish=yes)
 
 ### Selected Topic: Cryptocurrency Predictor Model
 We have selected our topic to be within the cryptocurrency space. We wanted to explore this area and decided to build a supervised learning model to take in historical pricing data and predict what the price of a given cryptocurrency will be at various points in the future. Multiple of our team members are interested in crypto and we decided to take our interests and take on a project that will be both fun and challenging as we look forward into the job hunt and life after the bootcamp. 
@@ -68,21 +67,21 @@ Note: From the figures above, we see that these three cryptos have a herd mental
 
 ![Prediction Model_2](Images/Prediction_Model.png)
 
-We see a slight shift in the chart from the actual price to the 30 and 60 day linear regression models. This is due to the data being trained to forecast 30 and 60 days into the future and since we use previous data to predict future data, historical pricing isn't introduced into the model for 30 or 60 days, respectively, causing similar chart movement on a slight delay.
+Note: We see a slight shift in the chart from the actual price to the 30 and 60 day linear regression models. This is due to the data being trained to forecast 30 and 60 days into the future and since we use previous data to predict future data, historical pricing isn't introduced into the model for 30 or 60 days, respectively, causing similar chart movement on a slight delay.
 
 ![ARIMA vs Linear Regression](Images/ARIMA_vs_Linear_Regression.png)
 
-Since the ARIMA method is forecasting out to a certain point, it takes a linear path to get to the desired 30 and 60 day price. Interestingly, despite the very different paths the linear regression and ARIMA models take to the 30 and 60 predicted prices, they both predict similar prices 30 and 60 days into the future (ending points of the above chart).
-
-Note:
+Note: Since the ARIMA method is forecasting out to a certain point, it takes a linear path to get to the desired 30 and 60 day price. Interestingly, despite the very different paths the linear regression and ARIMA models take to the 30 and 60 predicted prices, they both predict similar prices 30 and 60 days into the future (ending points of the above chart).
 
 ### Summary
 
-Data Teams analysis and inference:
+- Data Teams analysis and inference:
+
 Linear regression outputs were different from the ARIMA model. From a structure standpoint the ARIMA model used two features (original date and the close price). Whereas the linear regression mode used open, high, close, volume and marketcap.
 We recommend using the linear regression because the number of inputs. 
 
-Extending the model:
+- Extending the model:
+
 Provide an input scheme to include cryptos as required via a file uplaod. Currently it is restricted to 3 cryptos
 Include latest novel techniques and features such as market sentiment and other statitical attributes used by the stok market analysts.
 Lastly, we encourage developer input to further hone this model. Perhaps bring in additional features such as market sentiment, or even factors like calamities and wars the impact they have on the crypto market and individual prices.
