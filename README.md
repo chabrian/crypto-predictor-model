@@ -1,17 +1,17 @@
-# Crypto-Predictor-Model
+# Crypto-Predictor-Model 
 
 
 [Link To Google Slides](https://docs.google.com/presentation/d/1osnXG7ekbSfd0CvpOe8LRtvBTFQdVWlRWibVyDO1Dwg/edit#slide=id.g129b6a2aaa7_0_107)
 
 [Link to Tableau Public](https://public.tableau.com/app/profile/teddy.accardi/viz/CryptoPredictionModel/Story?publish=yes)
 
-### Selected Topic: Cryptocurrency Predictor Model
+### Selected Topic: Cryptocurrency Predictor Model 
 We have selected our topic to be within the cryptocurrency space. We wanted to explore this area and decided to build a supervised learning model to take in historical pricing data and predict what the price of a given cryptocurrency will be at various points in the future. Multiple of our team members are interested in crypto and we decided to take our interests and take on a project that will be both fun and challenging as we look forward into the job hunt and life after the bootcamp. 
 
-### Source Material
+### Source Material 
 We procured our daily historical pricing from a crypto tracking site (coincodex.com) in a csv file for Cardano (ADA), Ethereum (ETH) and Ripple (XRP). We gathered daily pricing data for the day's open, close, high, low, trading volume and market cap as our features for the machine learning model. We have data going back several years to provide enough info for as highly predictive of a model as we can.
 
-### Open Questions
+### Open Questions 
 Some questions we hope to answer are:
 - What will our model predict that the price of Cardano, Ethereum and Ripple will be at various points in the future? Is supervised learning the best option to tell us this?
 - Can we apply the same model to other cryptocurrencies? We have provided a subset of Ethereum, Cardano and Ripple
@@ -96,11 +96,11 @@ Findings:
 
 **30 Day Linear Regression:** ADA: $0.82  ETH: $2,815.23  XRP: $0.64
 
-**30 Day ARIMA:** ADA: $0.84  ETH: $2,969.46  XRP: $0.64
+**30 Day ARIMA:** ADA: $0.84  ETH: $2,969.46  XRP: $0.64 
 
 **60 Day Linear Regression:** ADA: $0.81  ETH: $2,838.94  XRP: $0.64
 
-**60 Day ARIMA:** ADA: $0.85  ETH: $3,016.93  XRP: $0.65
+**60 Day ARIMA:** ADA: $0.85  ETH: $3,016.93  XRP: $0.65 
 
 - Can we apply the same model to other cryptocurrencies? We have provided a subset of Ethereum, Cardano and Ripple
 
