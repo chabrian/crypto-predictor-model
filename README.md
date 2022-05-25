@@ -1,10 +1,9 @@
 # Crypto-Predictor-Model
 
-Google Slides Presentation: 
 
-https://docs.google.com/presentation/d/1osnXG7ekbSfd0CvpOe8LRtvBTFQdVWlRWibVyDO1Dwg/edit#slide=id.g129b6a2aaa7_0_107
+[Link To Google Slides](https://docs.google.com/presentation/d/1osnXG7ekbSfd0CvpOe8LRtvBTFQdVWlRWibVyDO1Dwg/edit#slide=id.g129b6a2aaa7_0_107)
 
-Link to Tableau Public: https://public.tableau.com/app/profile/teddy.accardi/viz/CryptoPredictionModel
+[Link to Tableau Public](https://public.tableau.com/app/profile/teddy.accardi/viz/CryptoPredictionModel/Story?publish=yes)
 
 ### Selected Topic: Cryptocurrency Predictor Model
 We have selected our topic to be within the cryptocurrency space. We wanted to explore this area and decided to build a supervised learning model to take in historical pricing data and predict what the price of a given cryptocurrency will be at various points in the future. Multiple of our team members are interested in crypto and we decided to take our interests and take on a project that will be both fun and challenging as we look forward into the job hunt and life after the bootcamp. 
@@ -18,23 +17,41 @@ Some questions we hope to answer are:
 - Can we apply the same model to other cryptocurrencies? We have provided a subset of Ethereum, Cardano and Ripple
 - Will different cryptos with their different price volumes and differing real world utility behave similarly?
 
-
 We created GitHub branches for each part of our project: the presentation/project overview, machine learning model, the database and the dashboard. Each member will be owning a particular piece of it to ensure it is up to date through each segment of the final project, but we will all be contributing to each part.  
 
 ### Analysis Phase
 After sourcing the historical pricing data for each of the three cryptocurrencies, we decided to use a linear regression supervised learning model to train our historical data on our features and predict what the daily closing price of each cryptocurrency will be for the next 30 and 60 days. We then connected this data to store in a Postgres database via AWS RDS and extracted it from Postgres to visualize in Tableau. Within these visualizations we allow the user to filter between our 30 and 60 day predictive models, as well as choose which cryptocurrency they would like displayed amongst the three for both the predictions, as well as the historical models, adding an interactive element to our charts. See more details on the machine learning model in the next section.
 
+**Requirements:**
+- We selected our three cryptos to model for 30 and 60 day predicted closing prices (ETH, XRP, ADA)
+- Historical data for the above three cryptos were obtained from www.coincodex.com 
+- We decided to manage the data through a PostgreSQL database, hosted on Amazon's AWS RDS, which provided data storage capabilities and protected data storage abilities
+- We selected the linear regression model from the sklearn to train, test and predict closing prices based on a feature list of high, low, open, close, volume and market cap. Noticeable in this feature list is the absence of time.
+- Additionally, we wanted to include a model that included time as an input feature so we created a secondary model: ARIMA.
+
 #### Machine Learning Model
 
-We used the ARIMA (auto regressive integrated moving average) model from the  statsmodel python library and the linear regression model from the sklean library. Both models use machine learning algorithms to train and predict the future price of the selected cryptocurrency. 
+- Linear Regression Model
 
-The linear regression model uses six features to train the model with the target variable being the close price 30 or 60 days forward from the feature data. The ARIMA model uses the date and daily close price as the feature data with second order predictors, differncing and white noise programmed as parameters. 
+The linear regression model uses six input features to train the model with the target variable being the close price 30 or 60 days forward from the feature data. The six features include open, high, low, close, volume, and market cap data over a period of approximately four years. Each features plays a role in predicting the future price in that together they describe the spread, activity, and volatility each day. 
 
-The model outputs a data frame that is sent to Postgres as a packaged product with the date, actual close price, and predicted close price. 
+- Training, Testing, and Accuracy for the LRM
 
-The model accuracy is represented using the root mean squared for the arima model and using the r squared value for the linear regression model. 
+The model was tested using recent historical data and comparing it to the trained model predicted output. We split the data into training and testing datasets by separating the most up-to-date information. The model accuracy is calculated using the root mean squared error (RMSE) and the mean absolute percentage error (MAPE). The mean absolute percentage error for the linear regression model was calculated at 0.515, implying that the model is 48.5% accurate in predicting the next 30 days. Once we achieved a comfortable level of accuracy, we used the trained model to forecast the 30-day and 60-day closing price.
 
-Both models have advantages, but the linear regression model provides a more robust platform to build on. The model outputs interval data opposed to the linear forecast from the ARIMA model. Additionally, the linear regression model trains on multiple features including volume and spread that help refine the future forecasting. Lastly, both models are designs using functions and generalized inputs. We encourage other developers to build on this model.
+- Autoregressive Integrated Moving Average Model (ARIMA)
+
+We used the ARIMA model from the statsmodel Python library using the date and closing price as the two training features. By nature of the ARIMA model, it only trains on historical (autoregressive) information and therefore, there is no target data. The ARIMA model has three input parameters in addition to the dataset: predictors, differencing, and error. Predictors are used to describe the MA (moving average) term. Differencing is used to make the data stationary by taking the difference between subsquent data points. The error parameter helps to quanitify the 'white noise' hidden in the data influenced by external market factors like market sentiment. The optimal ARIMA model was discovered to use first order differencing, second order predictors and second order error (2,2,1).
+
+- Training, Testing, and Accuracy for the ARIMA model
+
+The model was trained using the historical clsoing price data available over the past four years. We validated the model by comparing it to the most recent closing price data as shown in the Tablaeu visualizations. The accuracy of the model was calculated using the actual closing price data and forecasted predicted closing price using the root mean squared error (RMSE) and the mean absolute percentage error (MAPE).  The mean absolute percentage error for the linear regression model was calculated at ___, implying that the model is ___ accurate in predicting the next 30 days. The three tuning parameters were adjusted accordingly to achieve the greatest accuracy.
+
+- Model Comparison
+
+The linear regression model including more input features that help to describe the anticipated closing price without overfitting the data. The linear model also outputs daily interval results opposed to the ARIMA model which only has the ability to forecast linearly. Despite these positive features, the linear regression model fails to consider the time component that is critical for timeseries forecasting. This is where the ARIMA model has an advantage, particularly in its ability to consider the 'white noise' error and velocity of the changing parameters.
+
+The ideal model would be a combination of the linear regression model and ARIMA model that uses multiple features as well as the ARIMA tuning parameters. Both models are designed using functions and generalized inputs making it easy to build on. We encourage other developers to use our models as a foundation for a more complex and comprehensive cryptocurrency price predictor model.
 
 ### Historical Data
 
@@ -50,21 +67,21 @@ Note: From the figures above, we see that these three cryptos have a herd mental
 
 ![Prediction Model_2](Images/Prediction_Model.png)
 
-We see a slight shift in the chart from the actual price to the 30 and 60 day linear regression models. This is due to the data being trained to forecast 30 and 60 days into the future and since we use previous data to predict future data, historical pricing isn't introduced into the model for 30 or 60 days, respectively, causing similar chart movement on a slight delay.
+Note: We see a slight shift in the chart from the actual price to the 30 and 60 day linear regression models. This is due to the data being trained to forecast 30 and 60 days into the future and since we use previous data to predict future data, historical pricing isn't introduced into the model for 30 or 60 days, respectively, causing similar chart movement on a slight delay.
 
 ![ARIMA vs Linear Regression](Images/ARIMA_vs_Linear_Regression.png)
 
-Since the ARIMA method is forecasting out to a certain point, it takes a linear path to get to the desired 30 and 60 day price. Interestingly, despite the very different paths the linear regression and ARIMA models take to the 30 and 60 predicted prices, they both predict similar prices 30 and 60 days into the future (ending points of the above chart).
-
-Note:
+Note: Since the ARIMA method is forecasting out to a certain point, it takes a linear path to get to the desired 30 and 60 day price. Interestingly, despite the very different paths the linear regression and ARIMA models take to the 30 and 60 predicted prices, they both predict similar prices 30 and 60 days into the future (ending points of the above chart). 
 
 ### Summary
 
-Data Teams analysis and inference:
+- Data Teams analysis and inference:
+
 Linear regression outputs were different from the ARIMA model. From a structure standpoint the ARIMA model used two features (original date and the close price). Whereas the linear regression mode used open, high, close, volume and marketcap.
 We recommend using the linear regression because the number of inputs. 
 
-Extending the model:
+- Extending the model:
+
 Provide an input scheme to include cryptos as required via a file uplaod. Currently it is restricted to 3 cryptos
 Include latest novel techniques and features such as market sentiment and other statitical attributes used by the stok market analysts.
 Lastly, we encourage developer input to further hone this model. Perhaps bring in additional features such as market sentiment, or even factors like calamities and wars the impact they have on the crypto market and individual prices.
@@ -87,7 +104,7 @@ Findings:
 
 - Can we apply the same model to other cryptocurrencies? We have provided a subset of Ethereum, Cardano and Ripple
 
-Findings: Yes. Because the features of our model are metrics that are universally available for any cryptocurrency, it is easily replicable for any crypto, as we showed by performing the analysis on three separate ones.
+Findings: Yes. Because the features of our model are metrics that are universally available for any cryptocurrency, it is easily replicable for any crypto, as we showed by performing the analysis on three separate ones.`
 
 - Will different cryptos with their different price volumes and differing real world utility behave similarly? 
 
