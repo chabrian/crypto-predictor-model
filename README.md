@@ -67,7 +67,7 @@ Note: From the figures above, we see that these three cryptos have a herd mental
 
 ![Prediction Model_2](Images/Prediction_Model.png)
 
-Note: We see a slight shift in the chart from the actual price to the 30 and 60 day linear regression models. This is due to the data being trained to forecast 30 and 60 days into the future and since we use previous data to predict future data, historical pricing isn't introduced into the model for 30 or 60 days, respectively, causing similar chart movement on a slight delay.
+Note: We see a slight shift in the chart from the actual price to the 30 and 60 day linear regression models. This is due to the data being trained to forecast 30 and 60 days into the future and since time isn't a feature of this linear regression model, it doesn't inherently know it is using current data to predict out 30 and 60 days. This causes a slight shift in the historical data since each new day is being used to predict 30 and 60 days into the future as it is fed into the model.
 
 ![ARIMA vs Linear Regression](Images/ARIMA_vs_Linear_Regression.png)
 
